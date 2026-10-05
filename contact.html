@@ -1,0 +1,1162 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>تواصل معنا | ثلج و رمان</title>
+
+    <meta
+        name="description"
+        content="تواصل مع ثلج و رمان — الموقع، واتساب، إنستغرام والمزيد."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        /* =================================================
+           CONTACT PAGE
+           ================================================= */
+
+        .contact-page {
+            padding-top: 82px;
+        }
+
+        .contact-hero {
+            padding: 100px 24px 80px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff5f0,
+                    #ffffff
+                );
+
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            margin-bottom: 15px;
+
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1;
+            font-weight: 800;
+        }
+
+        .contact-hero p {
+            max-width: 650px;
+            margin: 0 auto;
+
+            color: #777;
+            font-size: 16px;
+        }
+
+        .contact-section {
+            padding: 80px 0 110px;
+
+            background: #fffaf5;
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .contact-card {
+            position: relative;
+
+            padding: 35px;
+
+            min-height: 230px;
+
+            border:
+                1px solid #e8e1dc;
+
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(181, 18, 27, 0.06);
+
+            top: -70px;
+            left: -70px;
+        }
+
+        .contact-icon {
+            width: 54px;
+            height: 54px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 22px;
+
+            border-radius: 15px;
+
+            background: #b5121b;
+
+            color: #ffffff;
+
+            font-size: 22px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-card h2 {
+            margin-bottom: 10px;
+
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .contact-card p {
+            margin-bottom: 20px;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+        .contact-card a {
+            display: inline-flex;
+
+            align-items: center;
+
+            color: #b5121b;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            position: relative;
+            z-index: 2;
+
+            transition: 0.25s ease;
+        }
+
+        .contact-card a:hover {
+            transform: translateX(-4px);
+        }
+
+        body.english
+        .contact-card a:hover {
+            transform: translateX(4px);
+        }
+
+        /* =================================================
+           MAP
+           ================================================= */
+
+        .map-section {
+            padding: 0 0 110px;
+
+            background: #fffaf5;
+        }
+
+        .map-wrapper {
+            overflow: hidden;
+
+            min-height: 450px;
+
+            border-radius: 24px;
+
+            background: #eeeeee;
+
+            position: relative;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 450px;
+
+            border: 0;
+
+            display: block;
+        }
+
+        .map-placeholder {
+            min-height: 450px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eeeeee,
+                    #dddddd
+                );
+
+            color: #777;
+        }
+
+        .map-placeholder strong {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #222;
+
+            font-size: 22px;
+        }
+
+        /* =================================================
+           FINAL CTA
+           ================================================= */
+
+        .contact-cta {
+            padding: 90px 24px;
+
+            background: #111111;
+
+            color: #ffffff;
+
+            text-align: center;
+        }
+
+        .contact-cta h2 {
+            margin-bottom: 15px;
+
+            font-size: clamp(35px, 6vw, 58px);
+
+            line-height: 1;
+        }
+
+        .contact-cta p {
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+
+            color: #aaa;
+
+            font-size: 15px;
+        }
+
+        /* =================================================
+           RESPONSIVE
+           ================================================= */
+
+        @media (max-width: 800px) {
+
+            .contact-page {
+                padding-top: 70px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                min-height: auto;
+            }
+
+        }
+
+        @media (max-width: 520px) {
+
+            .contact-hero {
+                padding:
+                    70px
+                    18px
+                    55px;
+            }
+
+            .contact-section {
+                padding:
+                    55px
+                    0
+                    75px;
+            }
+
+            .contact-card {
+                padding: 27px;
+            }
+
+            .map-section {
+                padding-bottom: 75px;
+            }
+
+            .map-wrapper,
+            .map-placeholder {
+                min-height: 350px;
+            }
+
+            .map-wrapper iframe {
+                height: 350px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         HEADER
+         ================================================= -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="index.html"
+                class="logo-link"
+            >
+
+                <img
+                    src="assets/logo.png"
+                    alt="ثلج و رمان"
+                    class="logo"
+                >
+
+            </a>
+
+
+            <nav class="desktop-nav">
+
+                <a
+                    href="index.html"
+                    data-ar="الرئيسية"
+                    data-en="Home"
+                >
+                    الرئيسية
+                </a>
+
+                <a
+                    href="menu.html"
+                    data-ar="المنيو"
+                    data-en="Menu"
+                >
+                    المنيو
+                </a>
+
+                <a
+                    href="contact.html"
+                    data-ar="تواصل معنا"
+                    data-en="Contact"
+                >
+                    تواصل معنا
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="language-btn"
+                    id="languageToggle"
+                    type="button"
+                >
+                    EN
+                </button>
+
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+        >
+
+            <a
+                href="index.html"
+                data-ar="الرئيسية"
+                data-en="Home"
+            >
+                الرئيسية
+            </a>
+
+            <a
+                href="menu.html"
+                data-ar="المنيو"
+                data-en="Menu"
+            >
+                الرئيسية
+            </a>
+
+            <a
+                href="menu.html"
+                data-ar="المنيو"
+                data-en="Menu"
+            >
+                المنيو
+            </a>
+
+            <a
+                href="contact.html"
+                data-ar="تواصل معنا"
+                data-en="Contact"
+            >
+                تواصل معنا
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <main class="contact-page">
+
+
+        <!-- HERO -->
+
+        <section class="contact-hero">
+
+            <span
+                class="section-label"
+                data-ar="ثلج و رمان"
+                data-en="THALJ & RUMMAN"
+            >
+                ثلج و رمان
+            </span>
+
+
+            <h1
+                data-ar="تواصل معنا"
+                data-en="Contact Us"
+            >
+                تواصل معنا
+            </h1>
+
+
+            <p
+                data-ar="نحن هنا لخدمتك. تواصل معنا أو قم بزيارتنا."
+                data-en="We are here for you. Contact us or come visit us."
+            >
+                نحن هنا لخدمتك. تواصل معنا أو قم بزيارتنا.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT CARDS -->
+
+        <section class="contact-section">
+
+            <div class="section-container">
+
+                <div class="contact-grid">
+
+
+                    <!-- WHATSAPP -->
+
+                    <article class="contact-card">
+
+                        <div class="contact-icon">
+                            ✆
+                        </div>
+
+                        <h2
+                            data-ar="واتساب"
+                            data-en="WhatsApp"
+                        >
+                            واتساب
+                        </h2>
+
+                        <p
+                            data-ar="للطلبات والاستفسارات، تواصل معنا مباشرة عبر واتساب."
+                            data-en="For orders and inquiries, contact us directly on WhatsApp."
+                        >
+                            للطلبات والاستفسارات، تواصل معنا مباشرة عبر واتساب.
+                        </p>
+
+                        <a
+                            href="#"
+                            id="contactWhatsapp"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span
+                                data-ar="تواصل عبر واتساب ←"
+                                data-en="Chat on WhatsApp →"
+                            >
+                                تواصل عبر واتساب ←
+                            </span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- INSTAGRAM -->
+
+                    <article class="contact-card">
+
+                        <div class="contact-icon">
+                            ◎
+                        </div>
+
+                        <h2>
+                            Instagram
+                        </h2>
+
+                        <p
+                            data-ar="تابعنا على إنستغرام وشاهد أحدث منتجاتنا وعروضنا."
+                            data-en="Follow us on Instagram for our latest products and offers."
+                        >
+                            تابعنا على إنستغرام وشاهد أحدث منتجاتنا وعروضنا.
+                        </p>
+
+                        <a
+                            href="#"
+                            id="contactInstagram"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span
+                                data-ar="زيارة إنستغرام ←"
+                                data-en="Visit Instagram →"
+                            >
+                                زيارة إنستغرام ←
+                            </span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- LOCATION -->
+
+                    <article class="contact-card">
+
+                        <div class="contact-icon">
+                            ⌖
+                        </div>
+
+                        <h2
+                            data-ar="موقعنا"
+                            data-en="Our Location"
+                        >
+                            موقعنا
+                        </h2>
+
+                        <p
+                            data-ar="اعثر علينا بسهولة عبر خرائط Google."
+                            data-en="Find us easily using Google Maps."
+                        >
+                            اعثر علينا بسهولة عبر خرائط Google.
+                        </p>
+
+                        <a
+                            href="#"
+                            id="contactMaps"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span
+                                data-ar="فتح الموقع ←"
+                                data-en="Open Location →"
+                            >
+                                فتح الموقع ←
+                            </span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- BUSINESS -->
+
+                    <article class="contact-card">
+
+                        <div class="contact-icon">
+                            ★
+                        </div>
+
+                        <h2
+                            data-ar="ثلج و رمان"
+                            data-en="Thalj & Rumman"
+                        >
+                            ثلج و رمان
+                        </h2>
+
+                        <p
+                            data-ar="عصائر، ميلك شيك، سلاش، كوكتيلات ومشروبات مميزة."
+                            data-en="Juices, milkshakes, slushes, cocktails and signature drinks."
+                        >
+                            عصائر، ميلك شيك، سلاش، كوكتيلات ومشروبات مميزة.
+                        </p>
+
+                        <a
+                            href="menu.html"
+                        >
+                            <span
+                                data-ar="شاهد المنيو ←"
+                                data-en="View Menu →"
+                            >
+                                شاهد المنيو ←
+                            </span>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAP -->
+
+        <section class="map-section">
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <span
+                        class="section-label"
+                        data-ar="زورونا"
+                        data-en="VISIT US"
+                    >
+                        زورونا
+                    </span>
+
+                    <h2
+                        data-ar="موقع ثلج و رمان"
+                        data-en="Find Thalj & Rumman"
+                    >
+                        موقع ثلج و رمان
+                    </h2>
+
+                    <p
+                        data-ar="يمكنك الوصول إلينا بسهولة عبر خرائط Google."
+                        data-en="Find us easily through Google Maps."
+                    >
+                        يمكنك الوصول إلينا بسهولة عبر خرائط Google.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="map-wrapper"
+                    style="margin-top: 40px;"
+                >
+
+                    <!--
+                        Replace the placeholder below with
+                        the actual Google Maps iframe once
+                        the client's exact location is confirmed.
+                    -->
+
+                    <div class="map-placeholder">
+
+                        <div>
+
+                            <strong
+                                data-ar="موقع ثلج و رمان"
+                                data-en="Thalj & Rumman Location"
+                            >
+                                موقع ثلج و رمان
+                            </strong>
+
+                            <p
+                                data-ar="سيتم إضافة الخريطة هنا."
+                                data-en="The map will be added here."
+                            >
+                                سيتم إضافة الخريطة هنا.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="contact-cta">
+
+            <span
+                class="section-label"
+                style="color:#aaa;"
+                data-ar="جاهز؟"
+                data-en="READY?"
+            >
+                جاهز؟
+            </span>
+
+            <h2
+                data-ar="خلّنا نجهز لك شيء لذيذ"
+                data-en="Let's get something delicious"
+            >
+                خلّنا نجهز لك شيء لذيذ
+            </h2>
+
+            <p
+                data-ar="استكشف المنيو واكتشف مشروبك المفضل."
+                data-en="Explore the menu and discover your favorite drink."
+            >
+                استكشف المنيو واكتشف مشروبك المفضل.
+            </p>
+
+            <a
+                href="menu.html"
+                class="btn btn-primary"
+                data-ar="استكشف المنيو"
+                data-en="Explore Menu"
+            >
+                استكشف المنيو
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <img
+                    src="assets/logo.png"
+                    alt="ثلج و رمان"
+                    class="footer-logo"
+                >
+
+                <p
+                    data-ar="نكهات منعشة، لحظات أجمل."
+                    data-en="Refreshing flavors, better moments."
+                >
+                    نكهات منعشة، لحظات أجمل.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3
+                    data-ar="روابط"
+                    data-en="Links"
+                >
+                    روابط
+                </h3>
+
+                <a
+                    href="index.html"
+                    data-ar="الرئيسية"
+                    data-en="Home"
+                >
+                    الرئيسية
+                </a>
+
+                <a
+                    href="menu.html"
+                    data-ar="المنيو"
+                    data-en="Menu"
+                >
+                    المنيو
+                </a>
+
+                <a
+                    href="contact.html"
+                    data-ar="تواصل معنا"
+                    data-en="Contact"
+                >
+                    تواصل معنا
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3
+                    data-ar="تواصل معنا"
+                    data-en="Contact"
+                >
+                    تواصل معنا
+                </h3>
+
+                <a
+                    href="#"
+                    id="footerInstagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    id="footerWhatsapp"
+                >
+                    WhatsApp
+                </a>
+
+                <a
+                    href="#"
+                    id="footerMaps"
+                >
+                    Google Maps
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                ©
+                <span id="currentYear"></span>
+                ثلج و رمان
+            </p>
+
+            <p class="webfoundry-credit">
+                Website designed & developed by
+                <strong>WebFoundry</strong>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =================================================
+         JAVASCRIPT
+         ================================================= -->
+
+    <script>
+
+        /* =================================================
+           LANGUAGE
+           ================================================= */
+
+        let currentLanguage =
+            localStorage.getItem("language") || "ar";
+
+
+        const languageToggle =
+            document.getElementById(
+                "languageToggle"
+            );
+
+
+        function updateLanguage() {
+
+            document
+                .querySelectorAll(
+                    "[data-ar][data-en]"
+                )
+                .forEach((element) => {
+
+                    element.textContent =
+                        currentLanguage === "ar"
+                            ? element.dataset.ar
+                            : element.dataset.en;
+
+                });
+
+
+            document.documentElement.lang =
+                currentLanguage;
+
+
+            document.documentElement.dir =
+                currentLanguage === "ar"
+                    ? "rtl"
+                    : "ltr";
+
+
+            document.body.classList.toggle(
+                "english",
+                currentLanguage === "en"
+            );
+
+
+            if (languageToggle) {
+
+                languageToggle.textContent =
+                    currentLanguage === "ar"
+                        ? "EN"
+                        : "AR";
+
+            }
+
+        }
+
+
+        if (languageToggle) {
+
+            languageToggle.addEventListener(
+                "click",
+                () => {
+
+                    currentLanguage =
+                        currentLanguage === "ar"
+                            ? "en"
+                            : "ar";
+
+
+                    localStorage.setItem(
+                        "language",
+                        currentLanguage
+                    );
+
+
+                    updateLanguage();
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           MOBILE NAVIGATION
+           ================================================= */
+
+        const mobileMenuButton =
+            document.getElementById(
+                "mobileMenuButton"
+            );
+
+        const mobileNav =
+            document.getElementById(
+                "mobileNav"
+            );
+
+
+        if (
+            mobileMenuButton &&
+            mobileNav
+        ) {
+
+            mobileMenuButton.addEventListener(
+                "click",
+                () => {
+
+                    mobileNav.classList.toggle(
+                        "active"
+                    );
+
+
+                    const isOpen =
+                        mobileNav.classList.contains(
+                            "active"
+                        );
+
+
+                    mobileMenuButton.textContent =
+                        isOpen
+                            ? "×"
+                            : "☰";
+
+
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        isOpen
+                            ? "true"
+                            : "false"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           BUSINESS LINKS
+           =================================================
+
+           IMPORTANT:
+           Replace these placeholders with
+           the client's real links.
+           ================================================= */
+
+        const BUSINESS_LINKS = {
+
+            whatsapp: "#",
+
+            instagram: "#",
+
+            maps: "#"
+
+        };
+
+
+        const links = {
+
+            contactWhatsapp:
+                document.getElementById(
+                    "contactWhatsapp"
+                ),
+
+            contactInstagram:
+                document.getElementById(
+                    "contactInstagram"
+                ),
+
+            contactMaps:
+                document.getElementById(
+                    "contactMaps"
+                ),
+
+            footerWhatsapp:
+                document.getElementById(
+                    "footerWhatsapp"
+                ),
+
+            footerInstagram:
+                document.getElementById(
+                    "footerInstagram"
+                ),
+
+            footerMaps:
+                document.getElementById(
+                    "footerMaps"
+                )
+
+        };
+
+
+        if (links.contactWhatsapp) {
+            links.contactWhatsapp.href =
+                BUSINESS_LINKS.whatsapp;
+        }
+
+        if (links.contactInstagram) {
+            links.contactInstagram.href =
+                BUSINESS_LINKS.instagram;
+        }
+
+        if (links.contactMaps) {
+            links.contactMaps.href =
+                BUSINESS_LINKS.maps;
+        }
+
+        if (links.footerWhatsapp) {
+            links.footerWhatsapp.href =
+                BUSINESS_LINKS.whatsapp;
+        }
+
+        if (links.footerInstagram) {
+            links.footerInstagram.href =
+                BUSINESS_LINKS.instagram;
+        }
+
+        if (links.footerMaps) {
+            links.footerMaps.href =
+                BUSINESS_LINKS.maps;
+        }
+
+
+        /* =================================================
+           CURRENT YEAR
+           ================================================= */
+
+        const currentYear =
+            document.getElementById(
+                "currentYear"
+            );
+
+
+        if (currentYear) {
+
+            currentYear.textContent =
+                new Date().getFullYear();
+
+        }
+
+
+        /* =================================================
+           START
+           ================================================= */
+
+        updateLanguage();
+
+    </script>
+
+</body>
+
+</html>
+```
